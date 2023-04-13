@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký học phần</title>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <label id="textheader"><b>Bài tập 1 - 20120519</b></label>
+      </div>
+
+      <ul class="nav">
+        <li class="limenu1" id="tmenu1">Menu 1</li>
+        <li class="limenu1" id="tmenu2">Menu 2</li>
+        <li class="limenu1" id="tmenu3">Menu 3</li>
+        <li class="limenu1" id="tmenu4">Menu 4</li>
+        <li class="limenu1" id="tmenu5">Menu 5</li>
+      </ul>
+      <br />
+
+      <div class="gmain">
+        <div class="main">
+          <div
+            id="textmain"
+            style="text-align: center; grid-column: 1 / span 3"
+          >
+            <b>Đăng ký học phần</b>
+          </div>
+          <div class="info">
+            <form class="ulgrid" name="ThongTin">
+              <li style="text-align: right"><label> Mã số: </label></li>
+              <li>
+                <input
+                  type="text"
+                  id="mssv"
+                  name="mssv"
+                  required
+                  style="width: 400px;"
+                /><br />
+              </li>
+              <li style="text-align: right"><label> Họ và tên: </label></li>
+              <li>
+                <input
+                  type="text"
+                  id="hoten"
+                  name="hoten"
+                  required
+                  style="width: 400px;"
+                /><br />
+              </li>
+              <li style="text-align: right"><label> Địa chỉ: </label></li>
+              <li>
+                <input
+                  type="text"
+                  id="diachi"
+                  name="diachi"
+                  required
+                  style="width: 400px;"
+                /><br />
+              </li>
+              <li style="text-align: right"><label> Điện thoại: </label></li>
+              <li>
+                <input
+                  type="text"
+                  id="dienthoai"
+                  name="dienthoai"
+                  required
+                  style="width: 400px;"
+                /><br />
+              </li>
+              <li style="text-align: right"><label> Giới tính: </label></li>
+              <li id="gt">
+                <input type="radio" id="nu" name="gioitinh" value="nam" /> Nam
+                <input type="radio" id="nam" name="gioitinh" value="nu" /> Nữ
+              </li>
+              <li style="text-align: right"><label> Ngày sinh: </label></li>
+              <li><input type="date" id="ngaysinh" name="ngaysinh" style="width: 400px;"/><br /></li>
+              <li style="text-align: right"><label> Email: </label></li>
+              <li>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  required
+                  style="width: 400px;"
+                /><br />
+              </li>
+            </form>
+          </div>
+          <div class="monhoc">
+            <div class="titlemonhoc" style="text-align: right">
+              <b>Các môn học</b>
+            </div>
+            <div></div>
+            <div class="titlemonhoc"><b>Các môn học đã chọn</b></div>
+            <div class="uldsmon" id="uldsmon">
+              <li class="dsmon">Lập Trình Hướng Đối Tượng</li>
+              <li class="dsmon">Cấu Trúc Dữ Liệu</li>
+              <li class="dsmon">Lập Trình Windows</li>
+              <li class="dsmon">NM Công Nghệ Phần Mềm</li>
+              <li class="dsmon">Trí Tuệ Nhân Tạo</li>
+              <li class="dsmon">Phát Triển Ứng Dụng Web</li>
+              <li class="dsmon">Cơ Sở Dữ Liệu</li>
+              <li class="dsmon">Lập Trình Ứng Dụng Java</li>
+            </div>
+            <div class="nut">
+              <button type="button" id="but1" class="but" onclick="dkmonhoc(event)">></button>
+              <button type="button" id="but2" class="but" onclick="dkmonhoc_all(event)">>></button>
+              <button type="button" id="but3" class="but" onclick="huydkmonhoc(event)"><</button>
+              <button type="button" id="but4" class="but" onclick="huydkmonhoc_all(event)"><<</button>
+            </div>
+            <div class="uldsmondc" id="uldsmondc">
+            </div>
+            <div style="text-align: center; grid-column: 1 / span 3">
+              <button type="button" id="dangky" onclick="OnDangky(event)">
+                Đăng ký
+              </button>
+              <button type="button" id="xoahet">Xoá hết</button>
+            </div>
+          </div>
+          <div class="tableds">
+            <table id="Bangds" width="100%" style="margin-top: 5px">
+              <colgroup>
+                <col width="auto" />
+                <col width="280px" />
+                <col width="auto" />
+                <col width="250px" />
+              </colgroup>
+              <tr
+                style="
+                  background-color: rgb(255, 130, 7);
+                  color: rgb(255, 216, 177);
+                "
+              >
+                <th>Mã số</th>
+                <th>Họ và tên</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+              </tr>
+              <tr class="trds">
+                <td>20120001</td>
+                <td style="text-align: left">Nguyễn Thị A</td>
+                <td>Nữ</td>
+                <td>07/08/2002</td>
+              </tr>
+              <tr class="trds">
+                <td>20120123</td>
+                <td style="text-align: left">Trần Văn C</td>
+                <td>Nam</td>
+                <td>12/24/2002</td>
+              </tr>
+              <tr class="trds">
+                <td>20120274</td>
+                <td style="text-align: left">Lê Văn G</td>
+                <td>Nam</td>
+                <td>06/13/2002</td>
+              </tr>
+              <tr class="trds">
+                <td>20120634</td>
+                <td style="text-align: left">Ngô Thị E</td>
+                <td>Nữ</td>
+                <td>10/10/2002</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="side" id="side">
+          <li class="snews">
+            <div class="news" id="news1">
+              <label style="color: black;">&#11166; &#11021; </label>News 01<i
+                class="fa fa-caret-down"
+              ></i>
+            </div>
+            <div class="content" id="news1drop">
+              content content content content content content content content
+              content content content content content content
+            </div>
+          </li>
+          <li class="snews">
+            <div class="news" id="news2">
+              <label style="color: black;">&#11166; &#11021; </label>News 02<i
+                class="fa fa-caret-down"
+              ></i>
+            </div>
+            <div class="content" id="news2drop">
+              content content content content content content content content
+              content content content content content content
+            </div>
+          </li>
+          <li class="snews">
+            <div class="news" id="news3">
+              <label style="color: black;">&#11166; &#11021; </label>News 03<i
+                class="fa fa-caret-down"
+              ></i>
+            </div>
+            <div class="content" id="news3drop">
+              content content content content content content content content
+              content content content content content content content content
+              content content content content content content content content
+              content content
+            </div>
+          </li>
+          <li class="snews">
+            <div class="news" id="news4">
+              <label style="color: black;">&#11166; &#11021; </label>News 04<i
+                class="fa fa-caret-down"
+              ></i>
+            </div>
+            <div class="content" id="news4drop">
+              content content content content content content content content
+              content content content content content content
+            </div>
+          </li>
+          
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>Copyright &copy; Nguyễn Thị Thuý Liễu</div>
+        <table class="tablemenu">
+          <tr>
+            <td class="tdmenu"><li class="limenu2" id="bmenu1">Menu 1</li></td>
+            <td class="tdmenu"><li class="limenu2" id="bmenu2">Menu 2</li></td>
+            <td class="tdmenu"><li class="limenu2" id="bmenu3">Menu 3</li></td>
+            <td class="tdmenu"><li class="limenu2" id="bmenu4">Menu 4</li></td>
+            <td><li class="limenu2" id="bmenu5">Menu 5</li></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="./script.js"></script>
+    <script>
+      //phóng to, thu gọn phần side
+      var dropdown = document.getElementsByClassName("news");
+      var i;
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("newsactive");
+          var elt = document.getElementById(this.id);
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            elt.innerHTML ='<label style="color: black;">&#11166; &#11021; </label>News 0'+this.id[4]+'<i class="fa fa-caret-down"></i>';
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+            elt.innerHTML ='<label style="color: white;">&#11167; &#11021; </label>News 0'+this.id[4]+'<i class="fa fa-caret-down"></i>';
+          }
+        });
+      }
+      //active các môn học được chọn
+      $(function()
+      {
+        var dsmon=document.getElementsByClassName("dsmon");
+      var i;
+      for (i = 0; i < dsmon.length; i++) {
+        dsmon[i].addEventListener("click", function () {
+          this.classList.toggle("dsmonactive");
+        });
+      }
+      })
+      $(function(){
+        var dsmondc=document.getElementsByClassName("dsmondc");
+      var i;
+      for (i = 0; i < dsmondc.length; i++) {
+        dsmondc[i].addEventListener("click", function () {
+          this.classList.toggle("dsmondcactive");
+        });
+      }
+      })
+      //di chuyển phần side
+      $(function() {
+          $( ".side" ).sortable({
+            items:">li",
+              placeholder: "ui-placeholder"
+          });
+      });
+    </script>
+  </body>
+</html>
